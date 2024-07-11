@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kiara Putrilia</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  img {
+    max-width: 80%;
+    max-height: 80%;
+    height: auto;
+    width: auto;
+    
+  }
+
+  .text {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #FFE500;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    
+  }
+
+  .signoff {
+    position: absolute;
+    bottom: 10px; /* Position at the bottom */
+    left: 10px; /* Position at the left */
+    color: #FFE500;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    line-height: 1.5; /* Adjust line height */
+  }
+  
+
+  a {
+    color: #FFE500;
+  }
+
+  a:hover {
+	filter: blur(1.15px);
+  }
+
+</style>
+</head>
+<body>
+    <div class="text">KIARA PUTRILIA is a designer residing in new york city. She loves working with big-scale projects + print! She loves researching (nerd), building environments, curating an experience, and fostering interactions. She hopes to be more involved in food-related projects! Thanks for visiting, my portfolio is under construction! In the meantime, you can send me anything artichoke-related to <a href="mailto:kiaraputrilia@gmail.com">kiaraputrilia@gmail.com</a>, or simply say hello and connect over a meal?</div>
+    <div class="signoff">Anyway! Here's some <a href=https://open.spotify.com/playlist/6hEbudGkYWyRCxo04MWvy1?si=6c9a670198544b27>kitchen tunes</a> you can enjoy <br> brb, my coffee is getting cold, <br> ARCHIVES AND ARTICHOKES</div>
+    <img id="backgroundImage" src="" alt="Background Image">
+<script>
+  // List of background images
+  let images = [
+    'construction/1.jpg',
+    'construction/2.jpg',
+    'construction/3.png',
+    'construction/4.JPEG',
+    'construction/5.PNG',
+    'construction/6.PNG',
+    'construction/8.png',
+    'construction/9.png',
+    'construction/10.png',
+    'construction/11.png',
+    'construction/12.png',
+    'construction/13.png',
+    'construction/14.png',
+    'construction/15.png',
+    'construction/16.png',
+    'construction/17.png',
+  ];
+
+  // Function to shuffle array elements
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+
+  // Shuffle the images array
+  images = shuffleArray(images);
+
+  let currentIndex = 0;
+  const backgroundImage = document.getElementById('backgroundImage');
+
+  function changeBackground() {
+    backgroundImage.src = images[currentIndex];
+    currentIndex = (currentIndex + 1) % images.length;
+  }
+
+  setInterval(changeBackground, 2000);
+
+  changeBackground();
+</script>
+</body>
+</html>
