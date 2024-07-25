@@ -1027,6 +1027,16 @@ function openMultipleWindows(id) {
         ];
     }
 
+
+else if (id === 'fiftyTwo') {
+    urls = [
+        {
+            url: 'https://archivesandartichokes.com/draft.html',
+            features: 'toolbar=yes,scrollbars=yes,resizable=yes,top=0,left=200,width=900,height=500'
+        }
+    ];
+}
+
     // Open each URL in a new window/tab
     urls.forEach(function(item) {
         var newWindow = window.open(item.url, '_blank', item.features);
