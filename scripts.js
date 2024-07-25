@@ -119,7 +119,7 @@ function openMultipleWindows(id) {
                 content: `
                     <html>
                     <head>
-                    <title>1st Essay Video</title>
+                    <title>1st Essay</title>
                     <style>
                         body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; }
                         video { width: 100%; height: 100%; object-fit: cover; }
@@ -140,7 +140,7 @@ function openMultipleWindows(id) {
                 content: `
                     <html>
                     <head>
-                    <title>2nd Essay Video</title>
+                    <title>2nd Essay</title>
                     <style>
                         body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; }
                         video { width: 100%; height: 100%; object-fit: cover; }
@@ -161,7 +161,7 @@ function openMultipleWindows(id) {
                 content: `
                     <html>
                     <head>
-                    <title>3rd Essay Video</title>
+                    <title>3rd Essay</title>
                     <style>
                         body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; }
                         video { width: 100%; height: 100%; object-fit: cover; }
@@ -182,7 +182,7 @@ function openMultipleWindows(id) {
                 content: `
                     <html>
                     <head>
-                    <title>4th Essay Video</title>
+                    <title>4th Essay</title>
                     <style>
                         body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; }
                         video { width: 100%; height: 100%; object-fit: cover; }
@@ -203,7 +203,7 @@ function openMultipleWindows(id) {
                 content: `
                     <html>
                     <head>
-                    <title>5th Essay Video</title>
+                    <title>5th Essay</title>
                     <style>
                         body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; }
                         video { width: 100%; height: 100%; object-fit: cover; }
@@ -224,7 +224,7 @@ function openMultipleWindows(id) {
                 content: `
                     <html>
                     <head>
-                    <title>6th Video</title>
+                    <title>6th Essay</title>
                     <style>
                         body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; }
                         video { width: 100%; height: 100%; object-fit: cover; }
