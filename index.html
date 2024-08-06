@@ -5,79 +5,142 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="styles.css">
   <title>Kiara</title>
+  <style>
+     @media only screen and (max-width: 600px) {
+    body {
+        background-color: black; /* Background color for small screens */
+    }
+
+    #mobileVideo {
+        display: block;
+        width: 90%;
+        height: 80vh;
+        position: fixed;
+        top: 10%;
+        left: 5%;
+        z-index: 9999;
+        background-color: black; /* Ensure the video container has a background color */
+        border-radius: 10px; /* Optional: for rounded corners */
+        overflow: hidden;
+    }
+
+    #mobileVideo video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    #message {
+        display: block;
+        position: fixed;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: yellow;
+        /* background: rgba(0, 0, 0, 0.7); */
+        padding: 10px;
+        /* border-radius: 5px; */
+        z-index: 10000;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    #content {
+        display: none;
+    }
+}
+
+/* For wider screens */
+@media only screen and (min-width: 601px) {
+    body {
+        background-color: #00af58;
+    }
+
+    #message {
+        display: none;
+    }
+
+    #mobileVideo {
+        display: none; /* Hide the video container on larger screens */
+    }
+}
+  </style>
 </head>
 <body>
-<div>
-    <div class="overlay" id="overlay">
-        <mark>WELCOME! <br>PLS ENABLE POP-UPS! <br>SCROLL TO FOCUS <br> ENJOY!</mark>
+    <div id="mobileVideo">
+        <video src="https://desireinabowlofrice.s3.us-east-2.amazonaws.com/Archives+and+Artichokes+Animation.mp4" loop autoplay muted></video>
     </div>
-    <!-- <div class="content"></div> -->
-    <div id="background">
-        <img src="BG.png" alt="Background Image">
+    <div id="message">
+        Website is optimized for wider-screens, please explore on your laptop!
     </div>
-    <div id="one" class="label">&#11045; handwritten notes</div>
-    <div id="two" class="label">&#11045; consuming an excessive amount of alliums</div>
-    <div id="three" class="label no-blur clickable" onclick="openMultipleWindows('three')">&#11045; mapping & indexing </div>
-    <div id="four" class="label">&#11045; footnotes and notations as a shifting landscape</div>
-    <div id="five" class="label no-blur clickable" onclick="openMultipleWindows('five')">&#11045; working with the extremities of scale</div>
-    <div id="six" class="label clickable color" onclick="openMultipleWindows('six')">&#11045; great introductions</div>
-    <div id="seven" class="label">&#11045; sending & receiving pdfs as a love language</div>
-    <div id="eight" class="label no-blur clickable">&#11045;<a href="https://kiaraputrilia.github.io/A-Seat-at-the-Table/">homogenizing food and design</a> </div>
-    <div id="nine" class="label no-blur clickable" onclick="openMultipleWindows('nine')">&#11045 printed matter</div>    
+    <div id="content">
+        <div class="overlay" id="overlay">
+            <mark>WELCOME! <br>PLS ENABLE POP-UPS! <br>SCROLL TO FOCUS <br> ENJOY!</mark>
+        </div>
+        <div id="background">
+            <img src="BG.png" alt="Background Image">
+        </div>
+        <div id="one" class="label">&#11045; handwritten notes</div>
+        <div id="two" class="label">&#11045; consuming an excessive amount of alliums</div>
+        <div id="three" class="label no-blur clickable" onclick="openMultipleWindows('three')">&#11045; mapping & indexing </div>
+        <div id="four" class="label">&#11045; footnotes and notations as a shifting landscape</div>
+        <div id="five" class="label no-blur clickable" onclick="openMultipleWindows('five')">&#11045; working with the extremities of scale</div>
+        <div id="six" class="label clickable color" onclick="openMultipleWindows('six')">&#11045; great introductions</div>
+        <div id="seven" class="label">&#11045; sending & receiving pdfs as a love language</div>
+        <div id="eight" class="label no-blur clickable">&#11045;<a href="https://kiaraputrilia.github.io/A-Seat-at-the-Table/">homogenizing food and design</a> </div>
+        <div id="nine" class="label no-blur clickable" onclick="openMultipleWindows('nine')">&#11045 printed matter</div>    
 
-    <div id="ten" class="label no-blur clickable">&#11045; <a href="https://kiaraputrilia.github.io/Core-2-Studio/A5/index.html">coding websites </a> </div>
-    <div id="eleven" class="label">&#11045; coming back to an<br> abandoned idea and <br>turning it anew</div>
-    <div id="twelve" class="label no-blur clickable" onclick="openMultipleWindows('twelve')">&#11045; observing the tenderness & intimacy of hand gestures </div>
-    <div id="fiftyTwo" class="label no-blur clickable" onclick="openMultipleWindows('fiftyTwo')">&#11045; archiving </div>
-    <div id="thirteen" class="label no-blur clickable" onclick="openMultipleWindows('thirteen')">&#11045; curiosity as a practice </div>
-    <div id="fourteen" class="label no-blur clickable">&#11045; <a href="mailto:kiaraputrilia@gmail.com?subject=Hello!&body=*message here* let's grab coffee soon?">creative email sign-offs</a></div>
-    <div id="fifteen" class="label">&#11045; embracing deviations </div>
-    <div id="sixteen" class="label no-blur clickable">&#11045;<a href="https://kiaraputrilia.github.io/your-reflection/bookTwo/image.html">performance art</a> </div>
-    <div id="fifty" class="label">&#11045; downloading things into my local storage</div>
-    <!-- <div id="fifty" class="label no-blur clickable">&#11045;<a href="KIARA_2024_PORTFOLIO.pdf" download="KIARA_2024_PORTFOLIO.pdf">downloading things into my local storage</a></div> -->
+        <div id="ten" class="label no-blur clickable">&#11045; <a href="https://kiaraputrilia.github.io/Core-2-Studio/A5/index.html">coding websites </a> </div>
+        <div id="eleven" class="label">&#11045; coming back to an<br> abandoned idea and <br>turning it anew</div>
+        <div id="twelve" class="label no-blur clickable" onclick="openMultipleWindows('twelve')">&#11045; observing the tenderness & intimacy of hand gestures </div>
+        <div id="fiftyTwo" class="label no-blur clickable" onclick="openMultipleWindows('fiftyTwo')">&#11045; archiving </div>
+        <div id="thirteen" class="label no-blur clickable" onclick="openMultipleWindows('thirteen')">&#11045; curiosity as a practice </div>
+        <div id="fourteen" class="label no-blur clickable">&#11045; <a href="mailto:kiaraputrilia@gmail.com?subject=Hello!&body=*message here* let's grab coffee soon?">creative email sign-offs</a></div>
+        <div id="fifteen" class="label">&#11045; embracing deviations </div>
+        <div id="sixteen" class="label no-blur clickable">&#11045;<a href="https://kiaraputrilia.github.io/your-reflection/bookTwo/image.html">performance art</a> </div>
+        <div id="fifty" class="label">&#11045; downloading things into my local storage</div>
+        <!-- <div id="fifty" class="label no-blur clickable">&#11045;<a href="KIARA_2024_PORTFOLIO.pdf" download="KIARA_2024_PORTFOLIO.pdf">downloading things into my local storage</a></div> -->
 
-    <div id="seventeen" class="label">&#11045; softness as a radical act</div>
-    <div id="eighteen" class="label">&#11045; building new environments</div>
-    <div id="nineteen" class="label">&#11045; cooking as an act of love</div>
-    <div id="twenty" class="label">&#11045; an oceanic feeling</div>
-    <div id="twentyOne" class="label clickable color">&#11045; <a href="https://perpetually-in-fermentation.info">recontextualizing new associations from old histories </a> </div>
-    <div id="twentyTwo" class="label no-blur clickable" onclick="openMultipleWindows('twentyTwo')">&#11045; speaking in new forms </div>
-    <div id="twentyThree" class="label">&#11045; curating an experience </div>
-    <div id="twentyFour" class="label no-blur clickable" onclick="openMultipleWindows('twentyFour')">&#11045; expanding archival systems </div>
-    <div id="twentyFive" class="label">&#11045; speaking from the heart </div>
-    <div id="twentySix" class="label">&#11045; a beginner's mind </div>
-    <div id="twentySeven" class="label">&#11045; becoming a researcher </div>
-    <div id="twentyEight" class="label">&#11045; trusting a gut feeling </div>
-    <div id="twentyNine" class="label">&#11045; "ugly" design </div>
-    <div id="thirty" class="label no-blur clickable" onclick="openMultipleWindows('thirty')">&#11045; spiritual fulfillment </div> 
-    <div id="thirtyOne" class="label no-blur clickable" onclick="openMultipleWindows('thirtyOne')">&#11045; community-building </div>
-    <div id="thirtyTwo" class="label">&#11045; reimagining futures </div>
-    <div id="thirtyThree" class="label">&#11045; care as a circle, expanding </div>
-    <div id="thirtyFour" class="label no-blur clickable">&#11045;<a href="https://kiaraputrilia.github.io/Desire-In-A-Bowl-of-Rice/"> fostering interactions</a> </div>
-    <div id="thirtyFive" class="label">&#11045; teaching </div>
+        <div id="seventeen" class="label">&#11045; softness as a radical act</div>
+        <div id="eighteen" class="label">&#11045; building new environments</div>
+        <div id="nineteen" class="label">&#11045; cooking as an act of love</div>
+        <div id="twenty" class="label">&#11045; an oceanic feeling</div>
+        <div id="twentyOne" class="label clickable color">&#11045; <a href="https://perpetually-in-fermentation.info">recontextualizing new associations from old histories </a> </div>
+        <div id="twentyTwo" class="label no-blur clickable" onclick="openMultipleWindows('twentyTwo')">&#11045; speaking in new forms </div>
+        <div id="twentyThree" class="label">&#11045; curating an experience </div>
+        <div id="twentyFour" class="label no-blur clickable" onclick="openMultipleWindows('twentyFour')">&#11045; expanding archival systems </div>
+        <div id="twentyFive" class="label">&#11045; speaking from the heart </div>
+        <div id="twentySix" class="label">&#11045; a beginner's mind </div>
+        <div id="twentySeven" class="label">&#11045; becoming a researcher </div>
+        <div id="twentyEight" class="label">&#11045; trusting a gut feeling </div>
+        <div id="twentyNine" class="label">&#11045; "ugly" design </div>
+        <div id="thirty" class="label no-blur clickable" onclick="openMultipleWindows('thirty')">&#11045; spiritual fulfillment </div> 
+        <div id="thirtyOne" class="label no-blur clickable" onclick="openMultipleWindows('thirtyOne')">&#11045; community-building </div>
+        <div id="thirtyTwo" class="label">&#11045; reimagining futures </div>
+        <div id="thirtyThree" class="label">&#11045; care as a circle, expanding </div>
+        <div id="thirtyFour" class="label no-blur clickable">&#11045;<a href="https://kiaraputrilia.github.io/Desire-In-A-Bowl-of-Rice/"> fostering interactions</a> </div>
+        <div id="thirtyFive" class="label">&#11045; teaching </div>
 
-    <div id="thirtySix" class="label">&#11045; finding a new thing to think about to death</div>
-    <div id="fiftyOne" class="label no-blur clickable" onclick="openMultipleWindows('fiftyOne')">&#11045; ...branding... </div>
+        <div id="thirtySix" class="label">&#11045; finding a new thing to think about to death</div>
+        <div id="fiftyOne" class="label no-blur clickable" onclick="openMultipleWindows('fiftyOne')">&#11045; ...branding... </div>
 
-    <div id="thirtySeven" class="label no-blur clickable">&#11045; <a href="https://www.are.na/kiara-putrilia/brain-fuel-hn2offzltmq">hoarding information (but not consuming it)</a>
+        <div id="thirtySeven" class="label no-blur clickable">&#11045; <a href="https://www.are.na/kiara-putrilia/brain-fuel-hn2offzltmq">hoarding information (but not consuming it)</a>
+        </div>
+        <div id="thirtyEight" class="label">&#11045; abandoned ideas</div>
+        <div id="thirtyNine" class="label">&#11045; indecisiveness</div>
+        <div id="forty" class="label">&#11045; what-ifs </div>
+        <div id="fortyOne" class="label no-blur clickable" onclick="openMultipleWindows('fortyOne')">&#11045; motion graphics </div>
+        <div id="fortyTwo" class="label">&#11045; being chronically online </div>
+        <div id="fortyThree" class="label">&#11045; overexplaining </div>
+
+        <div id="fortyFour" class="label">&#11045; coding websites with high proficiency </div>
+        <div id="fortyFive" class="label">&#11045; typesetting</div>
+        <div id="fortySix" class="label">&#11045; making better motion graphics</div>
+        <div id="fortySeven" class="label">&#11045; getting unstuck</div>
+        <div id="fortyEight" class="label no-blur clickable" onclick="openMultipleWindows('fortyEight')">&#11045; uncertainty </div>
+        <div id="fortyNine" class="label">&#11045; definitions as a limitation </div>
+        
     </div>
-    <div id="thirtyEight" class="label">&#11045; abandoned ideas</div>
-    <div id="thirtyNine" class="label">&#11045; indecisiveness</div>
-    <div id="forty" class="label">&#11045; what-ifs </div>
-    <div id="fortyOne" class="label no-blur clickable" onclick="openMultipleWindows('fortyOne')">&#11045; motion graphics </div>
-    <div id="fortyTwo" class="label">&#11045; being chronically online </div>
-    <div id="fortyThree" class="label">&#11045; overexplaining </div>
-
-    <div id="fortyFour" class="label">&#11045; coding websites with high profficiency </div>
-    <div id="fortyFive" class="label">&#11045; typesetting</div>
-    <div id="fortySix" class="label">&#11045; making better motion graphics</div>
-    <div id="fortySeven" class="label">&#11045; getting unstuck</div>
-    <div id="fortyEight" class="label no-blur clickable" onclick="openMultipleWindows('fortyEight')">&#11045; uncertainty </div>
-    <div id="fortyNine" class="label">&#11045; definitions as a limitation </div>
-    
-</div>
-<script src="scripts.js"></script>
-
-
+    <script src="scripts.js"></script>
 </body>
 </html>
