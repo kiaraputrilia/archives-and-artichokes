@@ -1,3 +1,6 @@
+window.onload = function() {
+    alert("WELCOME!\nPLEASE ENABLE POP-UPS!\nSCROLL TO FOCUS\nENJOY!");
+};
 
 function openMultipleWindows(id) {
     var urls;
