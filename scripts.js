@@ -1,6 +1,14 @@
 window.onload = function() {
-    alert("WELCOME!\nPLEASE ENABLE POP-UPS!\nSCROLL TO FOCUS\nENJOY!");
+    // Check the width of the screen
+    if (window.innerWidth <= 768) { // You can adjust the width threshold as needed
+        // Alert message for smaller screens (like phones)
+        alert("WELCOME!\nTHIS WEBSITE IS OPTIMIZED FOR LARGER SCREENS! PLEASE EXPLORE ON YOUR LAPTOP/COMPUTER! THANK YOU!");
+    } else {
+        // Alert message for larger screens (like laptops and desktops)
+        alert("WELCOME!\nPLEASE ENABLE POP-UPS!\nSCROLL TO FOCUS\nENJOY!");
+    }
 };
+
 
 function openMultipleWindows(id) {
     var urls;
@@ -389,6 +397,34 @@ function openMultipleWindows(id) {
                     </html>`
             }
         
+        ];
+
+    } else if (id === 'eleven') {
+        urls = [
+      
+            {
+                url: 'https://desireinabowlofrice.s3.us-east-2.amazonaws.com/Human%20Rhythms.pdf?embedded=true#toolbar=0&navpanes=0&scrollbar=0',
+                features: 'toolbar=yes,scrollbars=yes,resizable=yes,top=0,left=0,width=2000,height=1000'
+            },
+            {
+                url: '',
+                features: 'top=150,left=150,width=350,height=300',
+                content: `
+                    <html>
+                    <head>
+                    <title>coming back to an abandoned idea and turning it anew</title>
+                    <style>
+                        body { font-family: Arial Narrow, sans-serif; font-size: 16px; color: #333; }
+                    </style>
+                    </head>
+                    <body>
+                    <h3>Human Rhythms
+                    <br>2022-2024</h3>
+                    <p>This project was prompted by the idea of focusing on a generative topic. "Human Rhythms" explores how sound can be represented visually on paper. The book and its system is heavily inspired by a standard musical composition book—including its dimensions and the way that sounds are notated. However, I added extra grids so that the reader can track each sound per second. 
+                    </p>
+                    </body>
+                    </html>`
+            }
         ];
 
     } else if (id === 'twelve') {
