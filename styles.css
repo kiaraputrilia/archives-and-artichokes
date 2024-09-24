@@ -6,35 +6,27 @@
 }
 
 @media (max-width: 768px) {
-    #clickPrompt {
-      position: fixed; /* Fixed position to stay at the bottom right */
-      bottom: 1rem; /* Adjust based on your layout */
-      right: 1rem; /* Adjust based on your layout */
-      font-size: 1rem; /* Same size as click count */
-      opacity: 1; /* Initially visible */
+    .click-prompt {
+      font-size: 1rem !important; /* Ensure it's applied */
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .text {
+      font-size: 18px !important; /* Ensure smaller font size is applied */
+      line-height: 22px !important;
+    }
+    
+    .click-prompt {
+      font-size: 18px !important; /* Ensure it's applied */
     }
   
     .click-count {
-      display: none; /* Hide the click count on small screens */
+      font-size: 0.75rem !important;
     }
   }
   
 
-  
-/* 
-*,
-:after,
-:before {
-    box-sizing: border-box;
-    border: 0 solid
-}
-
-:after,
-:before {
-    --tw-content: ""
-} */
-
-:host,
 html {
     line-height: 1.5;
     -webkit-text-size-adjust: 100%;
@@ -83,15 +75,6 @@ strong {
     font-weight: bolder
 }
 
-/* code,
-kbd,
-pre,
-samp {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
-    font-feature-settings: normal;
-    font-variation-settings: normal;
-    font-size: 1em
-} */
 
 small {
     font-size: 80%
@@ -112,78 +95,6 @@ sub {
 sup {
     top: -.5em
 }
-/* 
-table {
-    text-indent: 0;
-    border-color: inherit;
-    border-collapse: collapse
-} */
-
-/* button,
-input,
-optgroup,
-select,
-textarea {
-    font-family: inherit;
-    font-feature-settings: inherit;
-    font-variation-settings: inherit;
-    font-size: 100%;
-    font-weight: inherit;
-    line-height: inherit;
-    letter-spacing: inherit;
-    color: inherit;
-    margin: 0;
-    padding: 0
-} */
-
-/* button,
-select {
-    text-transform: none
-}
-
-button,
-input:where([type=button]),
-input:where([type=reset]),
-input:where([type=submit]) {
-    -webkit-appearance: button;
-    background-color: transparent;
-    background-image: none
-}
-
-:-moz-focusring {
-    outline: auto
-}
-
-:-moz-ui-invalid {
-    box-shadow: none
-}
-
-progress {
-    vertical-align: baseline
-}
-
-::-webkit-inner-spin-button,
-::-webkit-outer-spin-button {
-    height: auto
-}
-
-[type=search] {
-    -webkit-appearance: textfield;
-    outline-offset: -2px
-}
-
-::-webkit-search-decoration {
-    -webkit-appearance: none
-}
-
-::-webkit-file-upload-button {
-    -webkit-appearance: button;
-    font: inherit
-}
-
-summary {
-    display: list-item
-} */
 
 blockquote,
 dd,
@@ -199,64 +110,6 @@ hr,
 p,
 pre {
     margin: 0
-}
-
-/* fieldset {
-    margin: 0
-}
-
-fieldset,
-legend {
-    padding: 0
-} */
-
-/* menu,
-ol,
-ul {
-    list-style: none;
-    margin: 0;
-    padding: 0
-}
-
-dialog {
-    padding: 0
-}
-
-textarea {
-    resize: vertical
-} */
-
-/* input::-moz-placeholder,
-textarea::-moz-placeholder {
-    opacity: 1;
-    color: #9ca3af
-}
-
-input::placeholder,
-textarea::placeholder {
-    opacity: 1;
-    color: #9ca3af
-}
-
-[role=button],
-button {
-    cursor: pointer
-}
-
-:disabled {
-    cursor: default
-} */
-
-audio,
-canvas,
-embed,
-iframe,
-img,
-object,
-svg,
-video {
-    display: block;
-    vertical-align: middle
 }
 
 img,
@@ -494,18 +347,6 @@ video {
 
 .underline {
     text-decoration-line: underline
-}
-
-.filter {
-    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)
-}
-
-.transition {
-    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
-    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-    transition-duration: .15s
 }
 
 body {
