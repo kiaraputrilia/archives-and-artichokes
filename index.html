@@ -1,146 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" data-precedence="next" />
   <title>KIARA PUTRILIA</title>
   <style>
-     @media only screen and (max-width: 600px) {
-    body {
-        background-color: black; /* Background color for small screens */
+    img, video {
+      width: 100%; 
+      height: auto; 
+    }
+    .text {
+    font-family: 'ABCDiatype', sans-serif;
+    position: fixed;
+    color: black;
+    font-size: 24px;
+    line-height: 22px;
+    letter-spacing: 0.75px;
+    transform: rotate(0deg); 
+    transform-origin: top left; 
+    transition: transform 0.5s;
+    pointer-events: none;
+  }
+
+    .click-prompt {
+      position: fixed;
+      color: blue;
+      font-size: 24px;
+      pointer-events: none; 
+      transition: opacity 0.5s;
+    }
+    .click-count {
+    position: fixed; 
+    bottom: 10px;
+    right: 10px; 
+    font-size: 0.875rem; 
+    line-height: 1.25rem; 
+    color: inherit; 
+    display: none; 
+    color: blue;
     }
 
-    #mobileVideo {
-        display: block;
-        width: 90%;
-        height: 80vh;
-        position: fixed;
-        top: 10%;
-        left: 5%;
-        z-index: 9999;
-        background-color: black; /* Ensure the video container has a background color */
-        border-radius: 10px; /* Optional: for rounded corners */
-        overflow: hidden;
+    .help {
+      cursor: help; 
     }
-
-    #mobileVideo video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    #message {
-        display: block;
-        position: fixed;
-        top: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        color: yellow;
-        /* background: rgba(0, 0, 0, 0.7); */
-        padding: 10px;
-        /* border-radius: 5px; */
-        z-index: 10000;
-        font-size: 16px;
-        text-align: center;
-    }
-
-    #content {
-        display: none;
-    }
-}
-
-/* For wider screens */
-@media only screen and (min-width: 601px) {
-    body {
-        background-color: #00af58;
-    }
-
-    /* #message {
-        display: none;
-    } */
-
-    #mobileVideo {
-        display: none; /* Hide the video container on larger screens */
-    }
-}
   </style>
 </head>
-<body>
-    <div id="mobileVideo">
-        <video src="https://desireinabowlofrice.s3.us-east-2.amazonaws.com/Archives+and+Artichokes+Animation.mp4" loop autoplay muted playsinline></video>
+<body class="help">
+  <nav class="fixed inset-x-0 top-0 z-10 w-full">
+    <div class="flex justify-between p-2.5 md:p-5 md:pb-3.5">
+      <h1><a href="/">Kiara Putrilia <br>(at a glance)</a></h1>
+      <a href="mailto:kiaraputrilia@gmail.com" class="subtitle">kiaraputrilia@gmail.com</a>
+      <a href="/information">Play!</a>
+      <div class="click-count" id="clickCount" style="display: none;"></div> 
     </div>
-    <!-- <div id="message">
-        Website is optimized for wider-screens, please explore on your laptop!
-    </div> -->
-  <div id="content">
-        <!-- <div class="overlay" id="overlay">
-            <mark>WELCOME! <br>PLS ENABLE POP-UPS! <br>SCROLL TO FOCUS <br> ENJOY!</mark> -->
-        <!-- </div>  -->
-        <div id="background">
-            <img src="BG.png" alt="Background Image">
-        </div>
-        <div id="one" class="label">&#11045; handwritten notes</div>
-        <div id="two" class="label">&#11045; consuming an excessive amount of alliums</div>
-        <div id="three" class="label no-blur clickable" onclick="openMultipleWindows('three')">&#11045; mapping & indexing </div>
-        <div id="four" class="label">&#11045; footnotes and notations as a shifting landscape</div>
-        <div id="five" class="label no-blur clickable" onclick="openMultipleWindows('five')">&#11045; working with the extremities of scale</div>
-        <div id="six" class="label clickable color" onclick="openMultipleWindows('six')">&#11045; great introductions</div>
-        <div id="seven" class="label">&#11045; sending & receiving pdfs as a love language</div>
-        <div id="eight" class="label no-blur clickable">&#11045;<a href="https://kiaraputrilia.github.io/A-Seat-at-the-Table/">homogenizing food and design</a> </div>
-        <div id="nine" class="label no-blur clickable" onclick="openMultipleWindows('nine')">&#11045; printed matter</div>    
+  </nav>
 
-        <div id="ten" class="label no-blur clickable">&#11045; <a href="https://kiaraputrilia.github.io/Core-2-Studio/A5/index.html">coding websites </a> </div>
-        <div id="eleven" class="label no-blur clickable" onclick="openMultipleWindows('eleven')">&#11045;coming back to an<br> abandoned idea and <br>turning it anew</div>  
-        <div id="twelve" class="label no-blur clickable" onclick="openMultipleWindows('twelve')">&#11045; observing the tenderness & intimacy of hand gestures </div>
-        <div id="fiftyTwo" class="label no-blur clickable" onclick="openMultipleWindows('fiftyTwo')">&#11045; archiving </div>
-        <div id="thirteen" class="label no-blur clickable" onclick="openMultipleWindows('thirteen')">&#11045; curiosity as a practice </div>
-        <div id="fourteen" class="label no-blur clickable">&#11045; <a href="mailto:kiaraputrilia@gmail.com?subject=Hello!&body=*message here* let's grab coffee soon?">creative email sign-offs</a></div>
-        <div id="fifteen" class="label">&#11045; embracing deviations </div>
-        <div id="sixteen" class="label no-blur clickable">&#11045;<a href="https://kiaraputrilia.github.io/your-reflection/bookTwo/image.html">performance art</a> </div>
-        <div id="fifty" class="label">&#11045; downloading things into my local storage</div>
-        <!-- <div id="fifty" class="label no-blur clickable">&#11045;<a href="KIARA_2024_PORTFOLIO.pdf" download="KIARA_2024_PORTFOLIO.pdf">downloading things into my local storage</a></div> -->
+  <div class="click-prompt" id="clickPrompt">Click</div>
+  <main>
+    <img src="https://desireinabowlofrice.s3.us-east-2.amazonaws.com/IMG_3132+2.gif">
+    <img src="https://desireinabowlofrice.s3.us-east-2.amazonaws.com/28-29+copy.png">
+    <img src="https://d2w9rnfcy7mm78.cloudfront.net/30912291/original_8161503c86c11b1bd3e1a22f10cb9654.png?1727193139?bc=0">
+    <img src="https://d2w9rnfcy7mm78.cloudfront.net/30904759/original_f2c7732f2bf213ae859cc77eb4bbe97d.png?1727172447?bc=0">
+    <img src="https://desireinabowlofrice.s3.us-east-2.amazonaws.com/Cover_1.gif">
+    <img src="https://d2w9rnfcy7mm78.cloudfront.net/30907517/original_f4b59fb801b016b740d14c0442563f0d.png?1727182732?bc=0">
+    <img src="https://desireinabowlofrice.s3.us-east-2.amazonaws.com/NEVERMIND-2023.gif">
+    <!-- <video controls autoplay loop>
+      <source src="https://desireinabowlofrice.s3.us-east-2.amazonaws.com/Archives+and+Artichokes+Animation.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video> -->
+    <img src="https://d2w9rnfcy7mm78.cloudfront.net/30907182/original_b6404dcfebd2e2269eb63a4b87917447.png?1727181575?bc=0">
+    <img src="https://d2w9rnfcy7mm78.cloudfront.net/30907292/original_74c7b218108cf52172fc8c9cf004df31.png?1727181893?bc=0">
+    <img src="https://d2w9rnfcy7mm78.cloudfront.net/30912337/original_ab11b07cc8a93537d2bff13e5d9368ad.jpg?1727193205?bc=0">
+    <img src="https://d2w9rnfcy7mm78.cloudfront.net/30912380/original_fcc596580d67d997800e2e358b071b6e.jpg?1727193235?bc=0">
+    <img src="https://d2w9rnfcy7mm78.cloudfront.net/30912678/original_814fe99a10119b062b5348f0ff0d500d.png?1727193930?bc=0">
+    <img src="https://d2w9rnfcy7mm78.cloudfront.net/30912405/original_f3b04d9663f300017a01e1e4b09499c7.jpg?1727193262?bc=0">
+    <img src="https://d2w9rnfcy7mm78.cloudfront.net/30912482/original_dc4233f8542bf4a9571ca9ed7a722b45.png?1727193432?bc=0">
+   
+  </main>
 
-        <div id="seventeen" class="label">&#11045; softness as a radical act</div>
-        <div id="eighteen" class="label">&#11045; building new environments</div>
-        <div id="nineteen" class="label">&#11045; cooking as an act of love</div>
-        <div id="twenty" class="label">&#11045; an oceanic feeling</div>
-        <div id="twentyOne" class="label no-blur clickable ">&#10045; <a href="https://perpetually-in-fermentation.info">recontextualizing new associations from old histories </a> </div>
-        <div id="twentyTwo" class="label no-blur clickable" onclick="openMultipleWindows('twentyTwo')">&#11045; speaking in new forms </div>
-        <div id="twentyThree" class="label">&#11045; curating an experience </div>
-        <div id="twentyFour" class="label no-blur clickable" onclick="openMultipleWindows('twentyFour')">&#11045; expanding archival systems </div>
-        <div id="twentyFive" class="label">&#11045; speaking from the heart </div>
-        <div id="twentySix" class="label">&#11045; a beginner's mind </div>
-        <div id="twentySeven" class="label">&#11045; becoming a researcher </div>
-        <div id="twentyEight" class="label">&#11045; trusting a gut feeling </div>
-        <div id="twentyNine" class="label">&#11045; "ugly" design </div>
-        <div id="thirty" class="label no-blur clickable" onclick="openMultipleWindows('thirty')">&#11045; spiritual fulfillment </div> 
-        <div id="thirtyOne" class="label no-blur clickable" onclick="openMultipleWindows('thirtyOne')">&#11045; community-building </div>
-        <div id="thirtyTwo" class="label">&#11045; reimagining futures </div>
-        <div id="thirtyThree" class="label">&#11045; care as a circle, expanding </div>
-        <div id="thirtyFour" class="label no-blur clickable">&#11045;<a href="https://kiaraputrilia.github.io/Desire-In-A-Bowl-of-Rice/"> fostering interactions</a> </div>
-        <div id="thirtyFive" class="label">&#11045; teaching </div>
+  <script>
+    const texts = [
+  "ٱلسَّلَامُ عَلَيْكُمْ",
+  "Designer/artist based in NYC",
+  "Originally from Indonesia",
+  "Specializes in publication design, web design, art direction, brand identity & conceptual storytelling",
+  "Rooted in writing and research",
+  "Open to new ways of learning",
+  "Enjoys walks in the sun",
+  `Currently...<sup>(1)</sup> daydreaming about my favorite art deco house in Brooklyn Heights,`,
+  "<sup>(2)</sup> hosting experimental dinner parties,",
+  "<sup>(3)</sup> painting another self-portrait"
+];
 
-        <div id="thirtySix" class="label">&#11045; finding a new thing to think about to death</div>
-        <div id="fiftyOne" class="label no-blur clickable" onclick="openMultipleWindows('fiftyOne')">&#11045; ...branding... </div>
+let clickCount = 0;
+const clickPrompt = document.getElementById("clickPrompt");
+const clickCountDisplay = document.getElementById("clickCount");
 
-        <div id="thirtySeven" class="label no-blur clickable">&#11045; <a href="https://www.are.na/kiara-putrilia/brain-fuel-hn2offzltmq">hoarding information (but not consuming it)</a>
-        </div>
-        <div id="thirtyEight" class="label">&#11045; abandoned ideas</div>
-        <div id="thirtyNine" class="label">&#11045; indecisiveness</div>
-        <div id="forty" class="label">&#11045; what-ifs </div>
-        <div id="fortyOne" class="label no-blur clickable" onclick="openMultipleWindows('fortyOne')">&#11045; motion graphics </div>
-        <div id="fortyTwo" class="label">&#11045; being chronically online </div>
-        <div id="fortyThree" class="label">&#11045; overexplaining </div>
+// Update the position of the click prompt
+document.addEventListener("mousemove", (e) => {
+  clickPrompt.style.left = e.clientX + 'px';
+  clickPrompt.style.top = e.clientY + 'px';
+});
 
-        <div id="fortyFour" class="label">&#11045; coding websites with high proficiency </div>
-        <div id="fortyFive" class="label">&#11045; typesetting</div>
-        <div id="fortySix" class="label">&#11045; making better motion graphics</div>
-        <div id="fortySeven" class="label">&#11045; getting unstuck</div>
-        <div id="fortyEight" class="label no-blur clickable" onclick="openMultipleWindows('fortyEight')">&#11045; uncertainty </div>
-        <div id="fortyNine" class="label">&#11045; definitions as a limitation </div>
-        
-    </div>
-    <script src="scripts.js"></script>
+// Handle clicks
+document.addEventListener("click", (e) => {
+  if (clickCount < texts.length) {
+    clickPrompt.style.opacity = '0'; // Hide the click prompt
+
+    const textElement = document.createElement("div");
+    textElement.className = 'text';
+    textElement.innerHTML = texts[clickCount];  // Use innerHTML to allow superscript
+
+    // Adjust position with offset and rotation origin
+    textElement.style.left = (e.clientX) + 'px';
+    textElement.style.top = (e.clientY) + 'px';
+    
+    // Random rotation
+    textElement.style.transform = `rotate(${Math.random() * 50}deg)`;
+    document.body.appendChild(textElement);
+
+    clickCount++;
+    clickCountDisplay.innerText = `${clickCount}/10`;
+    clickCountDisplay.style.display = 'block';
+
+    // Reset after the 10th click
+    if (clickCount === texts.length) {
+      setTimeout(() => {
+        resetClickCount();
+      }, 1000); // Delay before resetting
+    }
+  }
+
+  // Remove the click prompt after the first click
+  if (clickCount === 1) {
+    clickPrompt.style.opacity = '0'; // Hide the click prompt
+    clickCountDisplay.style.display = 'block'; // Show click count
+  }
+});
+
+
+
+function resetClickCount() {
+  clickCount = 0;
+  clickCountDisplay.style.display = 'none'; // Hide click count
+  clickPrompt.style.opacity = '1'; // Show click prompt again
+  document.querySelectorAll('.text').forEach(element => element.remove()); // Remove all texts
+}
+
+
+</script>
 </body>
 </html>
