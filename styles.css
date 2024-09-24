@@ -27,6 +27,20 @@
   }
   
 
+  @media (max-width: 600px) {
+    .click-prompt {
+      position: fixed;
+      bottom: 10px; /* Position it where the click count would be */
+      right: 10px;
+      font-size: 1rem; /* Adjust font size for smaller screens */
+      opacity: 1; /* Make sure it is visible */
+    }
+  
+    .click-count {
+      display: none; /* Hide the click count on small screens */
+    }
+  }
+  
 html {
     line-height: 1.5;
     -webkit-text-size-adjust: 100%;
