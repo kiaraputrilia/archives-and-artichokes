@@ -7,18 +7,18 @@
 
 @media (max-width: 768px) {
     .click-prompt {
-      font-size: 1rem !important; /* Ensure it's applied */
+      font-size: 1rem !important; 
     }
   }
   
   @media (max-width: 600px) {
     .text {
-      font-size: 18px !important; /* Ensure smaller font size is applied */
+      font-size: 18px !important; 
       line-height: 22px !important;
     }
     
     .click-prompt {
-      font-size: 18px !important; /* Ensure it's applied */
+      font-size: 18px !important; 
     }
   
     .click-count {
@@ -34,14 +34,14 @@
   @media (max-width: 600px) {
     .click-prompt {
       position: fixed;
-      bottom: 10px; /* Position it where the click count would be */
+      bottom: 10px; 
       right: 10px;
-      font-size: 1rem; /* Adjust font size for smaller screens */
-      opacity: 1; /* Make sure it is visible */
+      font-size: 1rem; 
+      opacity: 1; 
     }
   
     .click-count {
-      display: none; /* Hide the click count on small screens */
+      display: none;
     }
 
   }
@@ -226,13 +226,13 @@ video {
     display: flex
 }
 
-.table {
+/* .table {
     display: table
-}
+} */
 
-.grid {
+/* .grid {
     display: grid
-}
+} */
 
 .hidden {
     display: none
@@ -283,13 +283,13 @@ video {
     resize: both
 }
 
-.grid-cols-4 {
+/* .grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr))
-}
+} */
 
-.flex-col {
+/* .flex-col {
     flex-direction: column
-}
+} */
 
 .items-center {
     align-items: center
@@ -311,10 +311,10 @@ video {
     gap: 2rem
 }
 
-.object-contain {
+/* .object-contain {
     -o-object-fit: contain;
     object-fit: contain
-}
+} */
 
 .p-2 {
     padding: .5rem
@@ -363,9 +363,9 @@ video {
     text-align: center
 }
 
-.font-normal {
+/* .font-normal {
     font-weight: 400
-}
+} */
 
 .leading-4 {
     line-height: 1rem
@@ -398,9 +398,9 @@ body {
         display: block
     }
 
-    .md\:grid-cols-\[200px_1fr_1fr_1fr\] {
+    /* .md\:grid-cols-\[200px_1fr_1fr_1fr\] {
         grid-template-columns: 200px 1fr 1fr 1fr
-    }
+    } */
 
     .md\:gap-8 {
         gap: 2rem
