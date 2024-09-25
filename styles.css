@@ -24,6 +24,10 @@
     .click-count {
       font-size: 0.75rem !important;
     }
+
+    .bottom-left-text {
+        font-size: 0.75 rem !important;
+    }
   }
   
 
@@ -39,6 +43,7 @@
     .click-count {
       display: none; /* Hide the click count on small screens */
     }
+
   }
   
 html {
@@ -57,6 +62,17 @@ body {
     margin: 0;
     line-height: inherit
 }
+
+.bottom-left-text {
+    position: fixed;
+    bottom: 0; 
+    left: 0;
+    padding: 1rem; 
+    font-size: 1rem; 
+    color: #000; 
+    
+}
+
 
 hr {
     height: 0;

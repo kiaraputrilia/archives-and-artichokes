@@ -44,17 +44,57 @@
     .help {
       cursor: help; 
     }
+
+/* Container for the hover image */
+.play-link-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* Initially hide the hover image */
+.hover-image {
+    display: none;
+    position: absolute;
+    top: 100%; /* Appears directly below the link */
+    right: 0;
+    width: 400px; /* Set the desired width */
+    height: auto;
+    z-index: 100; /* Ensure it's on top */
+    border: 1px solid #000; /* Optional border for visibility */
+    background-size: cover;
+    background-position: center;
+    max-width: none; /* Ensure the image width is not constrained */
+}
+
+/* Show the image when hovering over the play link */
+.play-link-container:hover .hover-image {
+    display: block;
+}
+
+
+
   </style>
 </head>
 <body class="help">
   <nav class="fixed inset-x-0 top-0 z-10 w-full">
     <div class="flex justify-between p-2.5 md:p-5 md:pb-3.5">
-      <h1><a href="/">Kiara Putrilia <br>(at a glance)</a></h1>
+      <h1>Kiara Putrilia <br>(at a glance)</h1>
       <a href="mailto:kiaraputrilia@gmail.com" class="subtitle">kiaraputrilia@gmail.com</a>
-      <a href="https://archivesandartichokes.com/play/index.html">Play!</a>
-      <div class="click-count" id="clickCount" style="display: none;"></div> 
+
+      <!-- Play link with hover effect -->
+      <div class="play-link-container">
+        <a href="https://archivesandartichokes.com/play/index.html" class="play-link">Play!</a>
+        <!-- Image element instead of span for the hover image -->
+        <img class="hover-image" src="https://d2w9rnfcy7mm78.cloudfront.net/30930713/original_5d9420c6bbcd616c966de5f3b63dfdda.png?1727245078" alt="Hover Image" />
+      </div>
+
+      <div class="click-count" id="clickCount" style="display: none;"></div>
+    </div>
+    <div class="bottom-left-text">
+      <a href="https://perpetually-in-fermentation.info">perpetually-in-fermentation.info<br>(BFA thesis)</a>
     </div>
   </nav>
+
 
   <div class="click-prompt" id="clickPrompt">Click</div>
   <main>
@@ -151,14 +191,34 @@ document.addEventListener("click", (e) => {
   }
 });
 
-
-
 function resetClickCount() {
   clickCount = 0;
   clickCountDisplay.style.display = 'none'; // Hide click count
   clickPrompt.style.opacity = '1'; // Show click prompt again
   document.querySelectorAll('.text').forEach(element => element.remove()); // Remove all texts
 }
+
+document.querySelector('.play-link-container').addEventListener('mouseenter', function() {
+    const hoverImage = document.querySelector('.hover-image');
+    const rect = hoverImage.getBoundingClientRect();
+    const viewportWidth = window.innerWidth;
+
+    // Reset any manual positioning first
+    hoverImage.style.left = '';
+    hoverImage.style.right = '';
+
+    // If the image would overflow to the right, position it to the left
+    if (rect.right > viewportWidth) {
+        hoverImage.style.right = 'auto';
+        hoverImage.style.left = '0'; // Ensure it shifts to the left instead of overflowing
+    }
+
+    // Optional: Adjust width dynamically if needed
+    if (viewportWidth < rect.width) {
+        hoverImage.style.width = viewportWidth * 0.9 + 'px'; // Shrink to fit viewport width
+    }
+});
+
 
 
 </script>
